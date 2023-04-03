@@ -1,35 +1,82 @@
-function encriptar() {
-  var texto= document.getElementById("inputTexto").value.toLowerCase();
-  var txtCifrado = txtCifrado.replace(/e/igm,"enter");
-  var txtCifrado = txtCifrado.replace(/o/igm,"ober");
-  var txtCifrado = txtCifrado.replace(/i/igm,"imes");
-  var txtCifrado = txtCifrado.replace(/a/igm,"ai");
-  var txtCifrado = txtCifrado.replace(/u/igm,"ufat");
+const textArea = document.querySelector(".text-area");
+const mensaje = document.querySelector(".mensaje");
+const copia = document.querySelector(".copiar");
+copia.style.display = "none"
 
-  document.getElementById("muñeco").style.display="none";
-  document.getElementById("texto").style.display="none";
-  document.getElementById("texto2").innerHTML=txtCifrado;
-  document.getElementById("botoncopiar").style.display= "show";
-  document.getElementById("botoncopiar").style.display= "inherit";
+
+function validarTexto(){
+    let textoEscrito = document.querySelector(".text-area").value;
+    let validador = textoEscrito.match(/^[a-z]*$/);
+
+    if(!validador || validador === 0) {
+        alert("Solo son permitidas letras minúsculas y sin acentos")
+        location.reload();
+        return true;
+    }
 }
 
-function desencriptar() {
-    var texto= document.getElementById("inputTexto").value.toLowerCase();
-    var txtCifrado = txtCifrado.replace(/enter/igm,"e");
-    var txtCifrado = txtCifrado.replace(/ober/igm,"o");
-    var txtCifrado = txtCifrado.replace(/imes/igm,"i");
-    var txtCifrado = txtCifrado.replace(/ai/igm,"ai");
-    var txtCifrado = txtCifrado.replace(/ufat/igm,"u");
-  
-    document.getElementById("muñeco").style.display="none";
-    document.getElementById("texto").style.display="none";
-    document.getElementById("texto2").innerHTML=txtCifrado;
-    document.getElementById("botoncopiar").style.display= "show";
-    document.getElementById("botoncopiar").style.display= "inherit";
-  }
 
-function copy() {
-var contenido = querySelector("texto2");
-contenido.select();
-document.exeCommand("copy");
-alert("se copió tu texto"); }
+function btnEncriptar(){
+    if(!validarTexto()) {
+        const textoEncriptado = encriptar(textArea.value)
+        mensaje.value = textoEncriptado
+        mensaje.style.backgroundImage = "none"
+        textArea.value = "";
+        copia.style.display = "block"
+    
+    }
+}
+
+//Laves de encriptacion
+// `La letra "e" es convertida para "enter"`
+// `La letra "i" es convertida para "imes"`
+// `La letra "a" es convertida para "ai"`
+// `La letra "o" es convertida para "ober"`
+// `La letra "u" es convertida para "ufat"`
+
+
+function encriptar(stringEncriptada){
+    let matrizCodigo = [["e", "enter"], ["i", "imes"], ["a", "ai"], ["o", "ober"], ["u", "ufat"]];
+    stringEncriptada = stringEncriptada.toLowerCase()
+
+    for(let i = 0; i < matrizCodigo.length; i++){
+        if(stringEncriptada.includes(matrizCodigo[i][0])){
+            stringEncriptada = stringEncriptada.replaceAll(matrizCodigo[i][0], matrizCodigo[i][1])
+
+        }
+
+    }
+    return stringEncriptada
+}
+
+
+
+function btnDesencriptar(){
+    const textoEncriptado = desencriptar(textArea.value)
+    mensaje.value = textoEncriptado
+    textArea.value = "";
+    
+}
+
+
+function desencriptar(stringDesencriptada){
+    let matrizCodigo = [["e", "enter"], ["i", "imes"], ["a", "ai"], ["o", "ober"], ["u", "ufat"]];
+    stringDesencriptada = stringDesencriptada.toLowerCase()
+
+    for(let i = 0; i < matrizCodigo.length; i++){
+        if(stringDesencriptada.includes(matrizCodigo[i][1])){
+            stringDesencriptada = stringDesencriptada.replaceAll(matrizCodigo[i][1] , matrizCodigo[i][0])
+
+        }
+
+    }
+    return stringDesencriptada
+}
+
+
+function copiar(){
+    mensaje.select();
+    navigator.clipboard.writeText(mensaje.value)
+    mensaje.value = "";
+    alert("Texto Copiado")
+}
