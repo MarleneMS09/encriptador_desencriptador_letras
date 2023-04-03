@@ -3,22 +3,30 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Encriptador y desencriptador de texto</title>
+
     <link rel="stylesheet" href="css/styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+    <title>Encriptador y desencriptador de texto</title>
 </head>
 
 <header>
-    <div class="logo">
-        <h1><img src="assets/Logo.png" alt="LogodeAlura"></h1>
-    </div>
+    <img class="logo" src="assets/Logo.png" alt="Logo de Alura L">
 </header>
 
 <main>
+
     <section>
-        <textarea class="ingreso" id="inputTexto" placeholder="Ingresa el texto aquí"></textarea>
+        <textarea class="ingreso" cols="40" rows="15" placeholder="Ingresa el texto aquí"></textarea>
+    </section>
+
+
+    <section>
+        <div id="frame1">
+            <p id=icono>&#9888;&#65039;</p>
+            <p class="advertencia"> Solo letras minúsculas y sin acentos</p>
+        </div>
     </section>
 
 
@@ -28,14 +36,13 @@
         <img src="assets/Muñeco.png" id="muñeco" alt="imagendebusqueda">
 
         <button id="botoncopiar" onclick="copy()"> Copiar</button>
-
     </section>
 
+
     <section>
-        <div id="frame1">
-            <p id=icono>&#9888;&#65039;</p>
-            <p class="advertencia"> Solo letras minúsculas y sin acentos</p>
-        </div>
+        <div id="frame3">
+            <button id="btnencriptar" onclick="encriptar()">Encriptador</button>
+            <button id="btndesencriptar" onclick="desencriptar()">Desencriptador</button>
     </section>
 
 
@@ -50,20 +57,8 @@
         </div>
     </section>
 
-    <section>
-        <div id="frame3">
-            <button id="btnencriptar" onclick="encriptar()">Encriptador</button>
-            <button id="btndesencriptar" onclick="desencriptar()">Desencriptador</button>
-        </div>
-        </div>
-        <div>
-    </section>
 
-
-
-
-    <script src="Javascript/main.js"></script>
+<script src="Javascript/main.js"></script>
 </main>
 </body>
-
 </html>
