@@ -37,9 +37,9 @@ button {
 }
 .message-container textarea {
     background: rgba(110, 24, 85, 0.2);
-    border: 5px solid rgb(186, 124, 176);
+    border: 5px solid rgb(217, 151, 206);
     border-radius: 4px;
-    padding: 15px;
+    padding: 65px;
     resize: none;
     max-width: 470px;
     width: 100%;
@@ -80,21 +80,20 @@ button {
     height: 944px;
     left: 1000px;
     top: 50px;
-    background-color: rgb(224, 129, 192);
+    background-color: rgb(172, 85, 142);
     box-shadow: 0x 24px 32px -8px rgba(0, 0, 0, 0.08);
     border-radius: 32px;
 
 }
 .caveat-one {
     color: #090708;
-    font-size: 30px;
-    margin-top: 20px;
+    font-size: 27px;
+    margin-top: 30px;
 
 }
 .caveat-two {
-    color: #ea047e;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    font-size: 15px;
+    color: #6f1847;
+    font-size: 18px;
     margin-top: 20px;
 }
 #copy-btn {
@@ -111,9 +110,11 @@ footer {
     bottom: 5px;
     display:flex;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-style: italic;
+    color: rgb(255, 0, 187);
     position: absolute;
-    left: 50%;
-    text-align: center;
+    left: 15%;
+    text-align: left;
     transform: translate(-50%);
 }
  footer a {
