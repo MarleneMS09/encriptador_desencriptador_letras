@@ -1,82 +1,108 @@
-const textArea = document.querySelector(".text-area");
-const mensaje = document.querySelector(".mensaje");
-const copia = document.querySelector(".copiar");
-copia.style.display = "none"
+const textArea = document.querySelector('#normal-text');
+const encryptButton = document.querySelector('#encrypt-btn');
+const decryptButton = document.querySelector('#decrypt-btn');
+const encryptedText = document.querySelector('#encrypted-text');
+const copyButton = document.querySelector('#copy-btn');
+const blockHidden = document.querySelector('#block-hidden');
+const regex = /^[a-z]+$/;
+const lowerText = document.querySelector('#text-lower');
 
+let result;
 
-function validarTexto(){
-    let textoEscrito = document.querySelector(".text-area").value;
-    let validador = textoEscrito.match(/^[a-z]*$/);
-
-    if(!validador || validador === 0) {
-        alert("Solo son permitidas letras minúsculas y sin acentos")
-        location.reload();
-        return true;
-    }
+function encryptText() {
+    encryptLetter(textArea.value.trim());
 }
 
+encryptButton.addEventListener('click', encryptText);
 
-function btnEncriptar(){
-    if(!validarTexto()) {
-        const textoEncriptado = encriptar(textArea.value)
-        mensaje.value = textoEncriptado
-        mensaje.style.backgroundImage = "none"
-        textArea.value = "";
-        copia.style.display = "block"
+function encryptLetter(message) {
     
+    if(message == ''){
+        alert('¡Ups! No has escrito nada')
+        return;
     }
+
+    if(regex.test(message)) {
+        lowerText.style.display = 'none';
+    } else {
+        lowerText.style.display = 'block';
+        return;
+    } 
+
+    const wordArray = message.split("").map((m) => {
+
+        switch (m) {
+            case 'a':
+                return 'ai';
+
+            case 'e':
+                return 'enter';
+
+            case 'i':
+                return 'imes';
+
+            case 'o':
+                return 'ober';
+            
+            case 'u':
+                return 'ufat';
+            
+            default:
+                return m
+          }
+
+    })
+
+    result = wordArray.join('');
+    encryptedText.innerHTML = result;
+    copyButton.style.display = 'block'
+    blockHidden.style.display = 'none';
+
 }
 
-//Laves de encriptacion
-// `La letra "e" es convertida para "enter"`
-// `La letra "i" es convertida para "imes"`
-// `La letra "a" es convertida para "ai"`
-// `La letra "o" es convertida para "ober"`
-// `La letra "u" es convertida para "ufat"`
-
-
-function encriptar(stringEncriptada){
-    let matrizCodigo = [["e", "enter"], ["i", "imes"], ["a", "ai"], ["o", "ober"], ["u", "ufat"]];
-    stringEncriptada = stringEncriptada.toLowerCase()
-
-    for(let i = 0; i < matrizCodigo.length; i++){
-        if(stringEncriptada.includes(matrizCodigo[i][0])){
-            stringEncriptada = stringEncriptada.replaceAll(matrizCodigo[i][0], matrizCodigo[i][1])
-
-        }
-
-    }
-    return stringEncriptada
-}
-
-
-
-function btnDesencriptar(){
-    const textoEncriptado = desencriptar(textArea.value)
-    mensaje.value = textoEncriptado
-    textArea.value = "";
+function decryptText() {
     
+    decryptLetter(textArea.value.trim());
 }
 
+decryptButton.addEventListener('click', decryptText)
 
-function desencriptar(stringDesencriptada){
-    let matrizCodigo = [["e", "enter"], ["i", "imes"], ["a", "ai"], ["o", "ober"], ["u", "ufat"]];
-    stringDesencriptada = stringDesencriptada.toLowerCase()
+let decryptObj = {
+    ai:"a",
+    enter:"e",
+    imes:"i",
+    ober:"o",
+    ufat:"u"
+};
 
-    for(let i = 0; i < matrizCodigo.length; i++){
-        if(stringDesencriptada.includes(matrizCodigo[i][1])){
-            stringDesencriptada = stringDesencriptada.replaceAll(matrizCodigo[i][1] , matrizCodigo[i][0])
+function decryptLetter(message) {
 
-        }
-
+    if(message == ''){
+        alert('¡Ups! No has escrito nada')
+        return;
     }
-    return stringDesencriptada
-}
+
+    if(regex.test(message)) {
+        lowerText.style.display = 'none';
+    } else {
+        lowerText.style.display = 'block';
+        return;
+    }
 
 
-function copiar(){
-    mensaje.select();
-    navigator.clipboard.writeText(mensaje.value)
-    mensaje.value = "";
-    alert("Texto Copiado")
+    let resultDecrypt = message.replace(/ai|enter|imes|ober|ufat/gi, function(letter){ 
+    return decryptObj[letter]});
+
+    result = resultDecrypt;
+    encryptedText.innerHTML = result;
+    copyButton.style.display = 'block'
+    blockHidden.style.display = 'none';
 }
+
+function copyBoard() {
+    console.log(result);
+    navigator.clipboard.writeText(result);
+    alert('Se ha copiado el texto');
+}
+
+copyButton.addEventListener('click', copyBoard);
