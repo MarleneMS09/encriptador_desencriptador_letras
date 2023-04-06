@@ -10,57 +10,33 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
     <title>Encriptador y desencriptador de texto</title>
 </head>
-
-
-    
-
 <body>
-<main>
-
-    <img class="logo" src="assets/Logo.png" alt="Logo de Alura L">
-
-    <section>
-        <textarea class="ingreso" cols="40" rows="15" placeholder="Ingresa el texto aquí"></textarea>
-    </section>
-
-
-    <section>
-        <div id="frame1">
-            <p id=icono>&#9888;&#65039;</p>
-            <p class="advertencia"> Solo letras minúsculas y sin acentos</p>
-        </div>
-    </section>
-
-
-    <section>
-        <div id="rectangulo"></div>
-
-        <img src="assets/Muñeco.png" id="muñeco" alt="imagendebusqueda">
-
-        <button id="botoncopiar" onclick="copy()"> Copiar</button>
-    </section>
-
-
-    <section>
-        <div id="frame3">
-            <button id="btnencriptar" onclick="encriptar()">Encriptador</button>
-            <button id="btndesencriptar" onclick="desencriptar()">Desencriptador</button>
-    </section>
-
-
-    <section>
-        <div id="frame5">
-            <div id="auto-layout">
-                <p class="primer-text">Ningún mensaje fue encontrado</p>
-                <textarea class="second-text" id="texto2"
-                    placeholder="Ingresa el texto que deseas encriptar o desencriptar"></textarea>
-            </div>
-        </div>
-        </div>
-    </section>
-
-
+ <figure class="logo">
+ <img class="color-icon" src="./assets/Logo.png">
+ </figure>
+ <main class="container">
+<section class="message-container">
+<textarea placeholder="Ingrese el texto aquí" name="" id="normal-text" cols="30" rows="20" rel="stylesheet"></textarea>
+<div class="button-container">
+<p id="text-lower">&#10071; solo minúsculas y sin acento</p>
+<button id="encrypt-btn">Encriptador</button>
+<button id="decrypt-btn">Desencriptar</button>
+</div>
+</section>
+<section class="result-container">
+<div id="block-hidden">
+<img src="./assets/Muñeco.png" alt="imagen-muñeco"v id="doll-image">
+<p class="caveat-one">Ningún mensahe fue encontrado</p>
+<p class="caveat-two">Ingresa el texto que desees encriptar y desencriptar</p>
+</div>
+<p id="encrypted-text"></p>
+<button id="copy-btn">Copiar</button>
+</section>
+<footer>
+<p>Relizado por Vanessa Marlene M. Sanchez</p>
+<a href="https://github.com/MarleneMS09"><img src="https://img.icons8.com/bubbles/50/000000/github.png" alt="GitHub"/></a>
+</footer>
+ </main>
 <script src="Javascript/main.js"></script>
-</main>
 </body>
 </html>
