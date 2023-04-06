@@ -18,7 +18,7 @@ encryptButton.addEventListener('click', encryptText);
 function encryptLetter(message) {
     
     if(message == ''){
-        alert('¡Ups! No has escrito nada')
+        alert('¡Ups! No has escrito nada, vuelve a intentarlo')
         return;
     }
 
