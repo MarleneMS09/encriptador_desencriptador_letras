@@ -7,8 +7,8 @@ textarea,
 input::placeholder,
 textarea::placeholder,
 button {
-    color:rgb(254, 251, 251);
-    font-size: 16px;
+    color:rgb(6, 0, 0);
+    font-size: 20px;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif';
 } 
 .logo {
@@ -20,7 +20,7 @@ button {
    width: 120px;
    height: 48px;
    left: 40px;
-   top: 40px;
+   top: 20px;
    color: darkblue;
 }
 .color-icon {
@@ -34,10 +34,10 @@ button {
     width: 100%;
 }
 .message-container textarea {
-    background: rgba(10, 111, 174, 0.2);
-    border: 5px solid rgb(70, 175, 250);
+    background: rgb(120, 176, 255);
+    border: 5px solid rgb(255, 154, 243);
     border-radius: 3px;
-    padding: 65px;
+    padding: 29px;
     resize: none;
     max-width: 470px;
     width: 100%;
@@ -54,13 +54,13 @@ button {
 }
 .button-container p {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    margin-bottom: 10px;
+    margin-bottom: 17px;
 }
 .button-container button, #copy-btn {
-    background-color: #58a7df;
-    border: 5px solid rgb(49, 24, 174);
+    background-color: #92d0fd;
+    border: 5px solid rgb(62, 180, 248);
     border-radius: 25px;
-    color: #4b29d3;
+    color: #110f82;
     cursor: pointer;
     font-size: 20px;
     letter-spacing: 3px;
@@ -69,7 +69,7 @@ button {
     transition: all .2s ease-in;
 }
 .button-container button:hover {
-    border: 5px solid #ff189b;
+    border: 5px solid #f30f90;
     color: #ff54e5;
 }
 
@@ -78,14 +78,14 @@ button {
     width: 350px;
     height: 944px;
     left: 1000px;
-    top: 135px;
+    top: 90px;
     background-color: radial-gradient(circle at 9.44% -77.92%, #f45cc1 0, #e658be 25%, #d855ba 50%, #ca52b6 75%, #bc4fb1 100%);
-    box-shadow: 0x 28px 42px -8px rgba(0, 0, 0, 0.08);
+    box-shadow: 0x 28px 42px -8px rgba(205, 163, 163, 0.08);
     border-radius: 32px;
 
 }
 .caveat-one {
-    color: #efc6eb;
+    color: #e0afdb;
     font-size: 27px;
     margin-top: 30px;
     margin: 19px;
@@ -93,7 +93,7 @@ button {
 
 }
 .caveat-two {
-    color: #02090b;
+    color: #93cadb;
     font-size: 25px;
     margin-top: 20px;
     margin: 10px;
@@ -114,7 +114,7 @@ footer {
     display:flex;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font-style: normal;
-    color: rgb(254, 247, 254);
+    color: rgb(236, 249, 250);
     position: absolute;
     left: 15%;
     text-align: left;
