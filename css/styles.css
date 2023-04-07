@@ -1,24 +1,22 @@
 
 body {
-    background: rgb(255, 156, 237); /*colocar imagen con url();*/
+    background-image: radial-gradient(circle at 15.37% 56.11%, #009cf0 0, #0099f7 4.17%, #0095fb 8.33%, #0091fe 12.5%, #008cfe 16.67%, #1987fc 20.83%, #5981f7 25%, #7b7af1 29.17%, #9673e8 33.33%, #ab6bde 37.5%, #bd64d2 41.67%, #cc5cc5 45.83%, #d855b7 50%, #e24fa8 54.17%, #e94b99 58.33%, #ed4889 62.5%, #f0487a 66.67%, #f04b6b 70.83%, #ee4f5c 75%, #ea554d 79.17%, #e55b3f 83.33%, #de6231 87.5%, #d56a23 91.67%, #cc7113 95.83%, #c17700 100%);
 }
 
-
-/*
 textarea,
 input::placeholder,
 textarea::placeholder,
 button {
-    color:black;
+    color:rgb(254, 251, 251);
+    font-size: 16px;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif';
-} */
-
+} 
 .logo {
    display:flex;
    flex-direction: column;
    align-items: flex-start;
    padding: 0px;
-   gap: 40px position absolute;
+   gap: 40px;
    width: 120px;
    height: 48px;
    left: 40px;
@@ -36,9 +34,9 @@ button {
     width: 100%;
 }
 .message-container textarea {
-    background: rgba(110, 24, 85, 0.2);
-    border: 5px solid rgb(217, 151, 206);
-    border-radius: 4px;
+    background: rgba(10, 111, 174, 0.2);
+    border: 5px solid rgb(70, 175, 250);
+    border-radius: 3px;
     padding: 65px;
     resize: none;
     max-width: 470px;
@@ -59,42 +57,47 @@ button {
     margin-bottom: 10px;
 }
 .button-container button, #copy-btn {
-    background-color: #e1c1db;
-    border: 5px solid rgb(164, 84, 159);
+    background-color: #58a7df;
+    border: 5px solid rgb(49, 24, 174);
     border-radius: 25px;
-    color: #ad2e9a;
+    color: #4b29d3;
     cursor: pointer;
     font-size: 20px;
-    letter-spacing: 2px;
-    padding: 12px;
-    text-shadow: 2px 2px rgb(188, 170, 181);
+    letter-spacing: 3px;
+    padding: 27px;
+    text-shadow: 2px 2px rgb(65, 155, 239);
     transition: all .2s ease-in;
 }
 .button-container button:hover {
     border: 5px solid #ff189b;
     color: #ff54e5;
 }
+
 .result-container{
     position: absolute;
     width: 350px;
     height: 944px;
     left: 1000px;
-    top: 50px;
-    background-color: rgb(172, 85, 142);
-    box-shadow: 0x 24px 32px -8px rgba(0, 0, 0, 0.08);
+    top: 135px;
+    background-color: radial-gradient(circle at 9.44% -77.92%, #f45cc1 0, #e658be 25%, #d855ba 50%, #ca52b6 75%, #bc4fb1 100%);
+    box-shadow: 0x 28px 42px -8px rgba(0, 0, 0, 0.08);
     border-radius: 32px;
 
 }
 .caveat-one {
-    color: #090708;
+    color: #efc6eb;
     font-size: 27px;
     margin-top: 30px;
+    margin: 19px;
+    font-family: 'Maven Pro', sans-serif;
 
 }
 .caveat-two {
-    color: #6f1847;
-    font-size: 18px;
+    color: #02090b;
+    font-size: 25px;
     margin-top: 20px;
+    margin: 10px;
+    font-family: 'Maven Pro', sans-serif;
 }
 #copy-btn {
     bottom: 10px;
@@ -110,15 +113,15 @@ footer {
     bottom: 5px;
     display:flex;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    font-style: italic;
-    color: rgb(255, 0, 187);
+    font-style: normal;
+    color: rgb(254, 247, 254);
     position: absolute;
     left: 15%;
     text-align: left;
     transform: translate(-50%);
 }
  footer a {
-    color: #ea047e;
+    color: #bc1a70;
     align-items: center;
     display: flex;
     text-decoration: none;
