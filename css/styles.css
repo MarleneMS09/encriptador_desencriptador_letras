@@ -109,7 +109,7 @@ button {
     color: #5463ff;
 }
 footer {
-    align-items: center;
+    align-items: right;
     bottom: 5px;
     display:flex;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
